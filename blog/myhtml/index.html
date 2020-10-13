@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxumum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../mycss/index.css" />
+    <title>MyBlog</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-left">
+            <div class="container-left-test">
+            </div>
+            <div class="container-left-nav">
+                <div class="container-left-nav-logo">
+                    <img src="../picture/logo.jpg" alt="logo">
+                </div>
+                <div class="container-left-nav-contact">
+                    <span class="container-left-nav-homepage">
+                        home
+                    </span>
+                    <span class="container-left-nav-archives">
+                        archives
+                    </span>
+                    <span class="container-left-nav-photograph">
+                        photograph
+                    </span>
+                    <span class="container-left-nav-about">
+                        about
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="container-right-tool">
+                <div class="container-right-tool-search">
+                    <input type="text" placeholder="请输入关键词" />
+                </div>
+                <div class="container-right-tool-button">
+                    <button>search</button>
+                </div>
+            </div>
+            <div class="container-right-bottom"></div>
+            <script>
+                let posititon = document.getElementsByClassName('container-right-bottom')
+                console.log(posititon)
+                let date = new Date();
+                let data = [
+                    { head: 'one', contain: 'adfadfadfad', time: '2020.09.16' },
+                    { head: 'two', contain: 'adfadfadfad', time: date.toLocaleTimeString() },
+                    { head: 'three', contain: 'adfadfadfad', time: date.toLocaleTimeString() }
+                ]
+                function setDiv(item) {
+                    let div = document.createElement("div")
+                    div.className="container-right-bottom-time"
+                        // + '</div><h3>'
+                        // + item.head
+                        // + '</h3><div class="container-right-bottom-text">'
+                        // + item.contain
+                        // + '</div>'
+                    return div
+                }
+
+                function forLoad() {
+                    for (let i = 0; i < data.length; i++) {
+                        document.getElementsById("container-right-bottom").appendChild(setDiv(data[i]))
+                    }
+                    posititon.innerHTML = html
+                }
+                let posititon2 = document.getElementsByClassName('container-right-bottom-time')
+                console.log(posititon2)
+
+                window.onload = forLoad()
+            </script>
+            <!-- <div class="container-right-bottom-time">
+                    time:2020.09.16
+                </div>
+                <div class="container-right-bottom-text">
+                    文本
+                </div> -->
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
